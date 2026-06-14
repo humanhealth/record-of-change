@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The record of change</title>
+<meta name="description" content="A strategy brief: the missing layer in health AI is a structured record of attempted change, across patient, clinician, system and research surfaces." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #f8f9fa;
+    --ink: #202124;
+    --muted: #5f6368;
+    --line: #dadce0;
+    --blue: #1a73e8;
+    --blue-700: #1967d2;
+    --blue-soft: #e8f0fe;
+    --blue-border: #d2e3fc;
+    --green-t: #188038;
+    --amber-t: #b06000;
+    --red-t: #c5221f;
+    --max: 1080px;
+    --font: "Google Sans", "Product Sans", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --shadow1: 0 1px 2px 0 rgba(60,64,67,.10), 0 1px 3px 1px rgba(60,64,67,.06);
+    --shadow2: 0 1px 3px 0 rgba(60,64,67,.12), 0 4px 8px 3px rgba(60,64,67,.08);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--font); font-size: 17px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--blue-700); }
+  h1, h2, h3 { font-weight: 500; letter-spacing: -0.01em; line-height: 1.18; }
+
+  .topbar { height: 4px; display: flex; }
+  .topbar i { flex: 1; }
+  .topbar i:nth-child(1){ background:#4285f4; } .topbar i:nth-child(2){ background:#ea4335; }
+  .topbar i:nth-child(3){ background:#fbbc04; } .topbar i:nth-child(4){ background:#34a853; }
+
+  .nav { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .nav-inner { max-width: var(--max); margin: 0 auto; padding: 12px 24px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .nav .brand { font-weight: 500; font-size: 1rem; }
+  .nav .links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: flex-end; }
+  .nav .links a { color: var(--muted); text-decoration: none; font-size: 0.86rem; }
+  .nav .links a:hover { color: var(--blue-700); }
+
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+  .prose { max-width: 700px; }
+  .band { width: 100%; }
+  .band-alt { background: var(--bg-alt); }
+
+  .hero { padding: 84px 0 52px; }
+  .eyebrow { color: var(--blue-700); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px; }
+  .hero h1 { font-size: clamp(2.2rem, 5.2vw, 3.5rem); font-weight: 400; margin: 0 0 24px; max-width: 17ch; }
+  .hero .sub { font-size: 1.22rem; color: #3c4043; max-width: 660px; margin: 0 0 14px; }
+  .hero .human { color: var(--muted); max-width: 660px; margin: 0; }
+
+  .map { padding: 48px 0 56px; }
+  .band-label { font-size: 0.76rem; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); margin: 0 0 16px; }
+  .cap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .cap { background: var(--bg); border-radius: 14px; box-shadow: var(--shadow1); padding: 16px 16px; transition: box-shadow .15s ease; }
+  .cap:hover { box-shadow: var(--shadow2); }
+  .cap b { display: block; font-size: 0.98rem; font-weight: 500; }
+  .cap span { display: block; color: var(--muted); font-size: 0.83rem; margin-top: 3px; }
+
+  .flow-arrow { text-align: center; color: #9aa0a6; font-size: 1.6rem; line-height: 1; padding: 18px 0 12px; }
+
+  .record { background: var(--blue-soft); border: 1px solid var(--blue-border); border-radius: 28px; padding: 28px 28px 24px; }
+  .record h3 { margin: 0; font-size: 1.6rem; font-weight: 500; color: var(--blue-700); }
+  .record h3 small { color: #5f6368; font-weight: 400; font-size: 1.05rem; }
+  .record .rec-sub { margin: 8px 0 20px; color: #185fa5; font-size: 1.05rem; }
+  .fields { display: flex; flex-wrap: wrap; gap: 10px; }
+  .field { flex: 1 1 150px; min-width: 130px; background: var(--bg); border-radius: 12px; box-shadow: var(--shadow1); padding: 13px 14px; }
+  .field .n { color: var(--blue); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.05em; }
+  .field .t { font-weight: 500; font-size: 0.97rem; margin-top: 3px; }
+  .record .caveat { margin: 20px 0 0; color: #185fa5; font-size: 0.92rem; }
+
+  .surfaces { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .surface { background: var(--bg); border-radius: 16px; box-shadow: var(--shadow1); padding: 0 0 18px; overflow: hidden; transition: box-shadow .15s ease; }
+  .surface:hover { box-shadow: var(--shadow2); }
+  .surface .bar { height: 5px; }
+  .surface .body { padding: 16px 18px 0; }
+  .surface h4 { margin: 0 0 4px; font-size: 1.06rem; font-weight: 500; }
+  .surface .when { font-size: 0.78rem; font-weight: 500; margin: 0 0 12px; }
+  .surface ul { margin: 0; padding-left: 18px; }
+  .surface li { font-size: 0.89rem; color: #3c4043; margin: 7px 0; }
+  .s-patient .bar { background: #4285f4; } .s-patient .when { color: var(--blue-700); }
+  .s-clin .bar { background: #34a853; } .s-clin .when { color: var(--green-t); }
+  .s-sys .bar { background: #fbbc04; } .s-sys .when { color: var(--amber-t); }
+  .s-research .bar { background: #ea4335; } .s-research .when { color: var(--red-t); }
+
+  .impact { background: var(--bg); border-radius: 18px; box-shadow: var(--shadow1); padding: 22px 24px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 10px; }
+  .pill { background: var(--blue-soft); color: var(--blue-700); border-radius: 999px; padding: 8px 16px; font-size: 0.88rem; font-weight: 500; }
+
+  .explain { padding: 64px 0; }
+  .block { padding: 26px 0; }
+  .block + .block { border-top: 1px solid var(--line); }
+  h2.section-title { font-size: 1.55rem; margin: 0 0 14px; }
+  .block p { color: #3c4043; margin: 0 0 14px; }
+  sup a { text-decoration: none; font-size: 0.7em; }
+
+  .notlist { list-style: none; margin: 0; padding: 0; max-width: 700px; }
+  .notlist li { padding: 13px 0 13px 28px; border-top: 1px solid var(--line); position: relative; color: #3c4043; }
+  .notlist li:before { content: ""; position: absolute; left: 0; top: 19px; width: 14px; height: 2px; background: var(--blue); }
+
+  .steps { display: grid; gap: 12px; max-width: 780px; counter-reset: s; }
+  .step { display: flex; gap: 16px; align-items: flex-start; background: var(--bg); border-radius: 14px; box-shadow: var(--shadow1); padding: 16px 18px; }
+  .step .num { counter-increment: s; flex: 0 0 auto; width: 30px; height: 30px; border-radius: 999px; background: var(--blue); color: #fff; font-size: 0.9rem; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; }
+  .step .num:before { content: counter(s); }
+  .step b { display: block; font-weight: 500; }
+  .step span { color: var(--muted); font-size: 0.92rem; }
+
+  .closing { padding: 72px 0; }
+  .closing blockquote { margin: 0; max-width: 760px; font-size: clamp(1.4rem, 3.2vw, 1.9rem); font-weight: 400; line-height: 1.3; color: var(--ink); }
+
+  .sources { padding: 40px 0 80px; }
+  .sources ol { max-width: 800px; padding-left: 22px; }
+  .sources li { font-size: 0.85rem; color: var(--muted); margin: 9px 0; }
+  .sources a { word-break: break-word; }
+  .disclaimer { color: #9aa0a6; font-size: 0.82rem; margin-top: 20px; }
+
+  @media (max-width: 880px) {
+    .cap-grid { grid-template-columns: repeat(2, 1fr); }
+    .surfaces { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .nav .links { display: none; }
+    .surfaces, .cap-grid { grid-template-columns: 1fr; }
+    .hero { padding: 56px 0 36px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar"><i></i><i></i><i></i><i></i></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand">The record of change</div>
+    <div class="links">
+      <a href="#map">Map</a>
+      <a href="#exists">What exists</a>
+      <a href="#missing">What's missing</a>
+      <a href="#adoption">Adoption</a>
+      <a href="#equity">Equity</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#steps">Theory of change</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">The record of change · a strategy brief</div>
+    <h1>Health AI gives better answers. We still need to know whether anything changed.</h1>
+    <p class="sub">Google has the models, the research, the consumer surfaces and the data pipes. The next impact layer is a structured record of attempted change.</p>
+    <p class="human">Not just what medicine did. What happened after it tried.</p>
+  </div>
+</header>
+
+<section class="band band-alt map" id="map">
+  <div class="wrap">
+
+    <p class="band-label">Research and capability</p>
+    <div class="cap-grid">
+      <div class="cap"><b>AlphaFold</b><span>Science discovery</span></div>
+      <div class="cap"><b>Gemini</b><span>General reasoning, orchestration</span></div>
+      <div class="cap"><b>MedGemma</b><span>Medical text and image</span></div>
+      <div class="cap"><b>AMIE</b><span>Diagnostic conversation</span></div>
+      <div class="cap"><b>Imaging and diagnostics</b><span>Research focus area</span></div>
+      <div class="cap"><b>Mobile sensing</b><span>Personal health models</span></div>
+      <div class="cap"><b>Medical speech</b><span>Clinical speech to text</span></div>
+      <div class="cap"><b>Public health tools</b><span>Population research</span></div>
+    </div>
+
+    <div class="flow-arrow">↓</div>
+
+    <p class="band-label">The missing layer</p>
+    <div class="record">
+      <h3>Change record <small>(Delta Record)</small></h3>
+      <p class="rec-sub">What was tried. What happened. Who benefited. Who did not. Why.</p>
+      <div class="fields">
+        <div class="field"><div class="n">01</div><div class="t">Baseline</div></div>
+        <div class="field"><div class="n">02</div><div class="t">Attempt</div></div>
+        <div class="field"><div class="n">03</div><div class="t">Follow-through</div></div>
+        <div class="field"><div class="n">04</div><div class="t">Observed change</div></div>
+        <div class="field"><div class="n">05</div><div class="t">Barrier</div></div>
+        <div class="field"><div class="n">06</div><div class="t">Next action</div></div>
+      </div>
+      <p class="caveat">Not a replacement for electronic records, trials, PROMs or clinical judgement. It is the linked layer between an attempt and its outcome.</p>
+    </div>
+
+    <div class="flow-arrow">↓</div>
+
+    <p class="band-label">Surfaces where it creates value</p>
+    <div class="surfaces">
+      <div class="surface s-patient">
+        <div class="bar"></div>
+        <div class="body">
+          <h4>Patient</h4>
+          <p class="when">Value before any clinician is involved</p>
+          <ul>
+            <li>See what you tried and what changed.</li>
+            <li>One safe next action.</li>
+            <li>Works with wearables, symptom and medication notes, goals and follow-up prompts.</li>
+            <li>A memory of what happened, not just advice.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="surface s-clin">
+        <div class="bar"></div>
+        <div class="body">
+          <h4>Clinician</h4>
+          <p class="when">Value even when patient use is partial</p>
+          <ul>
+            <li>A short baseline, action, response and barrier summary.</li>
+            <li>Less noise from patient data, because it is structured around an attempt.</li>
+            <li>Follow-up that asks the right question.</li>
+            <li>Supports shared decisions, without claiming to diagnose on its own.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="surface s-sys">
+        <div class="bar"></div>
+        <div class="body">
+          <h4>System / population</h4>
+          <p class="when">Value once aggregated</p>
+          <ul>
+            <li>Shows where follow-up breaks.</li>
+            <li>Shows which barriers recur.</li>
+            <li>Shows who got advice but not benefit.</li>
+            <li>Supports service redesign, outreach and equity measurement.</li>
+            <li>Turns "advice given" into "benefit reached, or not".</li>
+          </ul>
+        </div>
+      </div>
+      <div class="surface s-research">
+        <div class="bar"></div>
+        <div class="body">
+          <h4>Research</h4>
+          <p class="when">Value over time</p>
+          <ul>
+            <li>Observational patterns first.</li>
+            <li>Hypotheses about who responds and who does not.</li>
+            <li>Better outcome definitions.</li>
+            <li>In time, n-of-1, pragmatic or point-of-care randomised designs where appropriate.</li>
+            <li>A practical unit of learning for a learning health system.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">↓</div>
+
+    <div class="impact">
+      <p class="band-label">Impact</p>
+      <div class="pills">
+        <span class="pill">Better individual follow-up</span>
+        <span class="pill">Better use of Google's health surfaces</span>
+        <span class="pill">More useful AI health coaching</span>
+        <span class="pill">Better clinical decision support</span>
+        <span class="pill">Measured equity gaps</span>
+        <span class="pill">Stronger real-world evidence</span>
+        <span class="pill">Health impact that can be seen, not assumed</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="band explain">
+  <div class="wrap">
+
+    <div class="block" id="exists">
+      <h2 class="section-title">What already exists</h2>
+      <div class="prose">
+        <p>Medicine records a great deal of what was done: prescriptions, referrals, tests, scans, diagnoses, procedures, follow-ups. Some outcomes are captured too. Repeat biomarkers, patient-reported measures, registry data. So it is not true that outcomes are never written down. The problem is that they are scattered. They sit in different systems, often in free text, often tied to one pathway, and they are rarely linked back to the specific attempt that was meant to move them.</p>
+        <p>Google has built much of the hard machinery nearby. Research is run as a model embedded with clinical, product and engineering teams, across imaging and diagnostics, genomics, mobile sensing and public health<sup><a href="#r1">1</a></sup>. MedGemma offers open models for medical text and image comprehension, which Google is explicit should be validated before use in any specific setting<sup><a href="#r2">2</a></sup>. AMIE is a conversational diagnostic system, now tested in a real outpatient clinic with Beth Israel Deaconess Medical Center<sup><a href="#r3">3</a></sup>. There are medical speech models<sup><a href="#r4">4</a></sup>, general reasoning and orchestration in Gemini<sup><a href="#r5">5</a></sup>, and science discovery upstream in AlphaFold<sup><a href="#r6">6</a></sup>. People can hold their own data in Health Connect, whose Medical Records feature carries basic clinical data in FHIR format with the person's permission<sup><a href="#r7">7</a></sup>. Google's consumer health and Fitbit surfaces sit alongside this<sup><a href="#r8">8</a></sup>.</p>
+        <p>That is a lot of capability. What it does not yet add up to is a record of whether an attempt changed anything.</p>
+      </div>
+    </div>
+
+    <div class="block" id="missing">
+      <h2 class="section-title">What is missing</h2>
+      <div class="prose">
+        <p>There is no small, consistent unit that says, for one person and one attempt: this is what was true before, this is what we tried, this is whether it actually happened, this is what changed, this is what got in the way, this is what to try next.</p>
+        <p>Call it a change record, or a Delta Record. It is observational to start with. With a single person you cannot see the counterfactual, so you do not claim the attempt caused the result. You record the attempt and what followed. That alone is more than most systems keep.</p>
+      </div>
+    </div>
+
+    <div class="block" id="adds">
+      <h2 class="section-title">What the change record adds</h2>
+      <div class="prose">
+        <p>It links the attempt to what came after. One person, one attempt, six fields: baseline, attempt, follow-through, observed change, barrier, next action.</p>
+        <p>It is not a new electronic record, a trial, a PROM, or a substitute for clinical judgement. It is the thin layer between an attempt and its outcome, which today mostly goes unwritten.</p>
+      </div>
+    </div>
+
+    <div class="block" id="adoption">
+      <h2 class="section-title">Why it works without full system adoption</h2>
+      <div class="prose">
+        <p>It is modular, and that is the point. One person can keep a change record and get something from it before any clinician is involved: a memory of what they tried and what changed, and one safe next step. One clinic can use it without full patient uptake, building the record from ordinary notes, tests, PROMs and, where the person shares it, Health Connect data in FHIR. One pathway can use it on its own.</p>
+        <p>It is worth more as these join up. But it does not need all of them at once, and it does not need a hospital to commit before a patient sees value.</p>
+      </div>
+    </div>
+
+    <div class="block" id="equity">
+      <h2 class="section-title">Why it matters for equity</h2>
+      <div class="prose">
+        <p>Put many change records together and some things become visible that are hard to see now. Where follow-up breaks. Which barriers keep recurring. Who was given advice and never reached the benefit.</p>
+        <p>This does not fix inequity. It makes visible where benefit fails to arrive, which is the first condition for doing anything about it.</p>
+      </div>
+    </div>
+
+    <div class="block" id="evidence">
+      <h2 class="section-title">How it matures into stronger evidence</h2>
+      <div class="prose">
+        <p>Begin observational. Patterns first. Then questions about why people respond differently. Then better outcome definitions. Then, where a setting is mature enough and it is safe, stronger designs: n-of-1, pragmatic trials, point-of-care randomisation.</p>
+        <p>Randomisation is not the foundation, because it needs the system to change first. The observed record of change is the foundation. It gives a learning health system a small, concrete thing to learn from.</p>
+      </div>
+    </div>
+
+    <div class="block" id="notwhat">
+      <h2 class="section-title">What it is not</h2>
+      <ul class="notlist">
+        <li>Not another diagnostic model.</li>
+        <li>Not an autonomous doctor.</li>
+        <li>Not a claim of causal proof from one person.</li>
+        <li>Not a replacement for electronic records, trials or PROMs.</li>
+        <li>Not dependent on every hospital adopting it first.</li>
+      </ul>
+    </div>
+
+    <div class="block" id="steps">
+      <h2 class="section-title">Theory of change</h2>
+      <div class="steps">
+        <div class="step"><span class="num"></span><div><b>Capture the attempted change</b><span>One person, one attempt, recorded as a small structured unit.</span></div></div>
+        <div class="step"><span class="num"></span><div><b>Structure the follow-up</b><span>Turn scattered notes, tests and patient data into a baseline, an action, a response and a barrier.</span></div></div>
+        <div class="step"><span class="num"></span><div><b>Return value to the person and the clinician</b><span>A memory and a next step for the patient; a clean summary for the clinician.</span></div></div>
+        <div class="step"><span class="num"></span><div><b>Aggregate patterns across groups</b><span>See where follow-up breaks and where benefit does not arrive.</span></div></div>
+        <div class="step"><span class="num"></span><div><b>Use mature data for better causal questions</b><span>Where it is safe and earned, move from observed to tested.</span></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="band band-alt closing">
+  <div class="wrap">
+    <blockquote>The scarce thing is no longer only the answer. It is the record of whether the answer became health.</blockquote>
+  </div>
+</section>
+
+<section class="band sources" id="sources">
+  <div class="wrap">
+    <p class="band-label">Sources</p>
+    <ol>
+      <li id="r1">Google Research, Health team and focus areas (imaging and diagnostics, genomics, mobile sensing, public health). <a href="https://research.google/teams/health/">research.google/teams/health</a>; <a href="https://research.google/blog/google-research-2022-beyond-health/">Google Research, 2022 &amp; beyond: Health</a>.</li>
+      <li id="r2">MedGemma: open models for medical text and image comprehension, stated to require validation before use in a specific setting. <a href="https://research.google/blog/medgemma-our-most-capable-open-models-for-health-ai-development/">research.google blog</a>; <a href="https://developers.google.com/health-ai-developer-foundations/medgemma/model-card">MedGemma model card</a>.</li>
+      <li id="r3">AMIE: conversational diagnostic AI, real-world feasibility study with Healthcare Associates at Beth Israel Deaconess Medical Center. <a href="https://research.google/blog/exploring-the-feasibility-of-conversational-diagnostic-ai-in-a-real-world-clinical-study/">Real-world feasibility study</a>; <a href="https://research.google/blog/advancing-amie-towards-specialist-care-and-real-world-validation/">Advancing AMIE towards specialist care</a>.</li>
+      <li id="r4">MedASR / medical speech to text. <a href="https://research.google/blog/next-generation-medical-image-interpretation-with-medgemma-15-and-medical-speech-to-text-with-medasr/">research.google blog (MedGemma 1.5 and MedASR)</a>.</li>
+      <li id="r5">Gemini, used here for general reasoning and orchestration. <a href="https://deepmind.google/models/gemini/">deepmind.google/models/gemini</a>. <em>Referenced generally; confirm the specific capability before quoting it.</em></li>
+      <li id="r6">AlphaFold, protein-structure prediction and science discovery. <a href="https://deepmind.google/science/alphafold/">deepmind.google/science/alphafold</a>.</li>
+      <li id="r7">Android Health Connect Medical Records: basic medical data in FHIR format with user permission. <a href="https://developer.android.com/health-and-fitness/health-connect/medical-records">developer.android.com Health Connect Medical Records</a>.</li>
+      <li id="r8">Google consumer health and Fitbit surfaces. <a href="https://health.google/products/">health.google/products</a>. <em>Referred to generally; confirm specific product and AI-coach status before naming it.</em></li>
+    </ol>
+    <p class="disclaimer">This is a strategy brief, not a product claim. It describes a proposed layer and where it would fit, not a validated system.</p>
+  </div>
+</section>
+
+</body>
+</html>
