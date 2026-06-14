@@ -10,9 +10,9 @@ Eyebrow: The record of change · a strategy brief
 
 Headline: Health AI gives better answers. We still need to know whether anything changed.
 
-Subheadline: Google has the models, the research, the consumer surfaces and the data pipes. The next impact layer is a structured record of attempted change.
+Subheadline: Google has the models, the research, the consumer surfaces and the data pipes. Turning that capability into better health, and into equity you can actually measure, needs one more layer: a structured record of what was tried and what changed.
 
-Human line: Not just what medicine did. What happened after it tried.
+Human line: Frontier capability is mostly here. This is how it becomes health, for the people it usually reaches last.
 
 ---
 
@@ -65,6 +65,8 @@ Research — value over time
 - A practical unit of learning for a learning health system.
 
 ### Impact
+Caption: This is the bottom of the translation: where frontier capability turns into health, and where the equity gaps stop being invisible.
+
 - Better individual follow-up
 - Better use of Google's health surfaces
 - More useful AI health coaching
@@ -77,7 +79,7 @@ Research — value over time
 
 ## What already exists
 
-Medicine records a great deal of what was done: prescriptions, referrals, tests, scans, diagnoses, procedures, follow-ups. Some outcomes are captured too. Repeat biomarkers, patient-reported measures, registry data. So it is not true that outcomes are never written down. The problem is that they are scattered. They sit in different systems, often in free text, often tied to one pathway, and they are rarely linked back to the specific attempt that was meant to move them.
+Medicine records a great deal of what was done: prescriptions, referrals, tests, scans, diagnoses, procedures, follow-ups. Some outcomes are captured too. Repeat biomarkers, patient-reported measures, registry data. So it is not true that outcomes are never written down. The problem is that they are scattered. They sit in different systems, often in free text, often tied to one pathway, and they are rarely linked back to the specific attempt that was meant to move them. That is not really an accident. The record was built for billing, handover, safety and the courts, not to tell you whether someone got better. So it does not.
 
 Google has built much of the hard machinery nearby. Research is run as a model embedded with clinical, product and engineering teams, across imaging and diagnostics, genomics, mobile sensing and public health [1]. MedGemma offers open models for medical text and image comprehension, which Google is explicit should be validated before use in any specific setting [2]. AMIE is a conversational diagnostic system, now tested in a real outpatient clinic with Beth Israel Deaconess Medical Center [3]. There are medical speech models [4], general reasoning and orchestration in Gemini [5], and science discovery upstream in AlphaFold [6]. People can hold their own data in Health Connect, whose Medical Records feature carries basic clinical data in FHIR format with the person's permission [7]. Google's consumer health and Fitbit surfaces sit alongside this [8].
 
@@ -105,13 +107,15 @@ It is worth more as these join up. But it does not need all of them at once, and
 
 Put many change records together and some things become visible that are hard to see now. Where follow-up breaks. Which barriers keep recurring. Who was given advice and never reached the benefit.
 
+Two people get the same advice. One can act on it. The other cannot: cost, pain, night shifts, no money, fear. Record only what was said and they look identical. Record what changed and you can see who was left behind, while there is still time to do something about it.
+
 This does not fix inequity. It makes visible where benefit fails to arrive, which is the first condition for doing anything about it.
 
 ## How it matures into stronger evidence
 
 Begin observational. Patterns first. Then questions about why people respond differently. Then better outcome definitions. Then, where a setting is mature enough and it is safe, stronger designs: n-of-1, pragmatic trials, point-of-care randomisation.
 
-Randomisation is not the foundation, because it needs the system to change first. The observed record of change is the foundation. It gives a learning health system a small, concrete thing to learn from.
+Randomisation is not the foundation. The hard part was never the method, it was following people up, which is what made good evidence slow, costly, and rarest for the people who needed it most. A cheap, structured record of what was tried and what followed is the foundation. It gives a learning health system a small, concrete thing to learn from, and it is what the stronger designs were always waiting on.
 
 ## What it is not
 

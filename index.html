@@ -61,6 +61,8 @@
   .hero h1 { font-size: clamp(2.2rem, 5.2vw, 3.5rem); font-weight: 400; margin: 0 0 24px; max-width: 17ch; }
   .hero .sub { font-size: 1.22rem; color: #3c4043; max-width: 660px; margin: 0 0 14px; }
   .hero .human { color: var(--muted); max-width: 660px; margin: 0; }
+  .cta { display: inline-flex; align-items: center; gap: 8px; margin-top: 26px; background: var(--blue); color: #fff; text-decoration: none; font-weight: 500; padding: 11px 22px; border-radius: 999px; box-shadow: var(--shadow1); }
+  .cta:hover { background: var(--blue-700); }
 
   .map { padding: 48px 0 56px; }
   .band-label { font-size: 0.76rem; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); margin: 0 0 16px; }
@@ -153,6 +155,7 @@
       <a href="#equity">Equity</a>
       <a href="#evidence">Evidence</a>
       <a href="#steps">Theory of change</a>
+      <a href="app/" style="color:var(--blue-700);font-weight:500;">Prototype</a>
     </div>
   </div>
 </nav>
@@ -161,8 +164,9 @@
   <div class="wrap">
     <div class="eyebrow">The record of change · a strategy brief</div>
     <h1>Health AI gives better answers. We still need to know whether anything changed.</h1>
-    <p class="sub">Google has the models, the research, the consumer surfaces and the data pipes. The next impact layer is a structured record of attempted change.</p>
-    <p class="human">Not just what medicine did. What happened after it tried.</p>
+    <p class="sub">Google has the models, the research, the consumer surfaces and the data pipes. Turning that capability into better health, and into equity you can actually measure, needs one more layer: a structured record of what was tried and what changed.</p>
+    <p class="human">Frontier capability is mostly here. This is how it becomes health, for the people it usually reaches last.</p>
+    <a class="cta" href="app/">See the working prototype →</a>
   </div>
 </header>
 
@@ -262,6 +266,7 @@
 
     <div class="impact">
       <p class="band-label">Impact</p>
+      <p style="margin:0 0 14px;color:#3c4043;max-width:680px;">This is the bottom of the translation: where frontier capability turns into health, and where the equity gaps stop being invisible.</p>
       <div class="pills">
         <span class="pill">Better individual follow-up</span>
         <span class="pill">Better use of Google's health surfaces</span>
@@ -282,7 +287,7 @@
     <div class="block" id="exists">
       <h2 class="section-title">What already exists</h2>
       <div class="prose">
-        <p>Medicine records a great deal of what was done: prescriptions, referrals, tests, scans, diagnoses, procedures, follow-ups. Some outcomes are captured too. Repeat biomarkers, patient-reported measures, registry data. So it is not true that outcomes are never written down. The problem is that they are scattered. They sit in different systems, often in free text, often tied to one pathway, and they are rarely linked back to the specific attempt that was meant to move them.</p>
+        <p>Medicine records a great deal of what was done: prescriptions, referrals, tests, scans, diagnoses, procedures, follow-ups. Some outcomes are captured too. Repeat biomarkers, patient-reported measures, registry data. So it is not true that outcomes are never written down. The problem is that they are scattered. They sit in different systems, often in free text, often tied to one pathway, and they are rarely linked back to the specific attempt that was meant to move them. That is not really an accident. The record was built for billing, handover, safety and the courts, not to tell you whether someone got better. So it does not.</p>
         <p>Google has built much of the hard machinery nearby. Research is run as a model embedded with clinical, product and engineering teams, across imaging and diagnostics, genomics, mobile sensing and public health<sup><a href="#r1">1</a></sup>. MedGemma offers open models for medical text and image comprehension, which Google is explicit should be validated before use in any specific setting<sup><a href="#r2">2</a></sup>. AMIE is a conversational diagnostic system, now tested in a real outpatient clinic with Beth Israel Deaconess Medical Center<sup><a href="#r3">3</a></sup>. There are medical speech models<sup><a href="#r4">4</a></sup>, general reasoning and orchestration in Gemini<sup><a href="#r5">5</a></sup>, and science discovery upstream in AlphaFold<sup><a href="#r6">6</a></sup>. People can hold their own data in Health Connect, whose Medical Records feature carries basic clinical data in FHIR format with the person's permission<sup><a href="#r7">7</a></sup>. Google's consumer health and Fitbit surfaces sit alongside this<sup><a href="#r8">8</a></sup>.</p>
         <p>That is a lot of capability. What it does not yet add up to is a record of whether an attempt changed anything.</p>
       </div>
@@ -316,6 +321,7 @@
       <h2 class="section-title">Why it matters for equity</h2>
       <div class="prose">
         <p>Put many change records together and some things become visible that are hard to see now. Where follow-up breaks. Which barriers keep recurring. Who was given advice and never reached the benefit.</p>
+        <p>Two people get the same advice. One can act on it. The other cannot: cost, pain, night shifts, no money, fear. Record only what was said and they look identical. Record what changed and you can see who was left behind, while there is still time to do something about it.</p>
         <p>This does not fix inequity. It makes visible where benefit fails to arrive, which is the first condition for doing anything about it.</p>
       </div>
     </div>
@@ -324,7 +330,7 @@
       <h2 class="section-title">How it matures into stronger evidence</h2>
       <div class="prose">
         <p>Begin observational. Patterns first. Then questions about why people respond differently. Then better outcome definitions. Then, where a setting is mature enough and it is safe, stronger designs: n-of-1, pragmatic trials, point-of-care randomisation.</p>
-        <p>Randomisation is not the foundation, because it needs the system to change first. The observed record of change is the foundation. It gives a learning health system a small, concrete thing to learn from.</p>
+        <p>Randomisation is not the foundation. The hard part was never the method, it was following people up, which is what made good evidence slow, costly, and rarest for the people who needed it most. A cheap, structured record of what was tried and what followed is the foundation. It gives a learning health system a small, concrete thing to learn from, and it is what the stronger designs were always waiting on.</p>
       </div>
     </div>
 
