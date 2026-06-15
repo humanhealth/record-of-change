@@ -28,7 +28,7 @@ export function generateClinicianSummary(profile, intervention, record) {
       ];
 
   return [
-    'DELTA RECORD CLINICIAN SUMMARY',
+    'RECORD OF CHANGE — CLINICIAN SUMMARY',
     '',
     `Patient/demo profile: ${profile.displayName}`,
     profile.description,

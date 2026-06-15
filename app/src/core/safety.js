@@ -26,7 +26,7 @@ export function patientActionLabel(intervention) {
   if (intervention.clinicianRequired) {
     return 'Prepare for clinician review';
   }
-  return 'Start patient-owned Delta Cycle';
+  return 'Start a cycle you own';
 }
 
 export function safetyStatus(intervention) {

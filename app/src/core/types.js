@@ -1,5 +1,5 @@
 /**
- * Domain model reference for the Delta Layer prototype.
+ * Domain model reference for the record-of-change prototype.
  * These are JSDoc typedefs so the repo runs without a TypeScript build step.
  * A future Next.js/TypeScript version can lift these into .ts interfaces.
  */

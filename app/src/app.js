@@ -28,7 +28,7 @@ const routes = [
   ['/', 'Thesis'],
   ['/state', 'Health state'],
   ['/interventions', 'Interventions'],
-  ['/cycle', 'Delta cycle'],
+  ['/cycle', 'The cycle'],
   ['/track', 'Track'],
   ['/review', 'Review'],
   ['/clinician-summary', 'Clinician summary'],
@@ -76,8 +76,8 @@ function layout(content) {
     <div class="app-shell">
       <aside class="sidebar">
         <a class="homelink" href="../">← The record of change</a>
-        <div class="brand">Delta Record prototype</div>
-        <div class="brand-sub">A small demo of the Delta Record idea. Made-up data only.</div>
+        <div class="brand">The record of change</div>
+        <div class="brand-sub">A small demo. Made-up data only.</div>
         <nav class="nav">
           ${routes.map(([path, label]) => `<a href="#${path}" class="${current === path ? 'active' : ''}" data-link>${label}</a>`).join('')}
         </nav>
@@ -105,7 +105,7 @@ function renderHome() {
   return html`
     <section class="hero">
       <div class="kicker">Phase 0 · a working sketch</div>
-      <h1>The medical record remembers what happened. The Delta Record remembers what was tried.</h1>
+      <h1>You can always find what was done. What happened after is a mess.</h1>
       <p class="lede">One idea, made concrete. When someone tries to improve their health, write the attempt down: why this action, how you’ll know if it helped, what actually happened, how unsure you still are, and what to do next.</p>
     </section>
     ${safetyNotice()}
@@ -125,7 +125,7 @@ function renderHome() {
     </section>
     <section class="card big" style="margin-top:16px">
       <h2>Why bother</h2>
-      <p>Advice is everywhere. What’s rare is keeping honest track of whether acting on it changed anything. So this stays small on purpose. Get the Delta Record right first, then worry about real records, clinicians and whole health systems.</p>
+      <p>Advice is everywhere. What’s rare is keeping track of whether acting on it changed anything. So this stays small on purpose. Get this small record right first, then worry about real records, clinicians and whole health systems.</p>
       <div class="button-row">
         <a class="btn" href="/state" data-link>See the demo health state</a>
         <a class="btn secondary" href="/evidence-safety" data-link>Evidence and safety</a>
@@ -268,7 +268,7 @@ function renderCycle() {
     const top = candidates.find((candidate) => candidate.canStartPatientOwnedCycle);
     return html`
       <section class="hero">
-        <div class="kicker">Delta cycle</div>
+        <div class="kicker">The cycle</div>
         <h1>Nothing running yet</h1>
         <p class="lede">Pick one action you can own. The idea is to learn from a single attempt, not to fix everything at once.</p>
       </section>
@@ -283,7 +283,7 @@ function renderCycle() {
   const { cycle, intervention } = bundle;
   return html`
     <section class="hero">
-      <div class="kicker">Active Delta Cycle</div>
+      <div class="kicker">Running now</div>
       <h1>${escapeHtml(intervention.title)}</h1>
       <p class="lede">This is the attempt, written down: what you’re trying, how it gets measured, and when to come back and look.</p>
     </section>
@@ -357,7 +357,7 @@ function renderReview() {
   const { record, intervention } = bundle;
   return html`
     <section class="hero">
-      <div class="kicker">Delta review</div>
+      <div class="kicker">Review</div>
       <h1>What changed?</h1>
       <p class="lede">The confidence label stays cautious on purpose. Something useful happening is not the same as the action being the reason.</p>
     </section>
@@ -392,7 +392,7 @@ function renderReview() {
       </div>
     </section>
     <div class="card big" style="margin-top:16px">
-      <h2>Why this counts as a Delta Record</h2>
+      <h2>Why this counts as a record of change</h2>
       <p>Everything is here in one place: where things started, the evidence behind the choice, why this action, what was actually done, what moved, how sure we are, the safety flags, what to do next, and who gets to see it.</p>
       <div class="button-row"><a class="btn" href="/clinician-summary" data-link>Make the clinician summary</a></div>
     </div>
@@ -491,11 +491,11 @@ function routeContent() {
 }
 
 const pageTitles = {
-  '/deepmind': `${deltaThesis.meta.title} — Delta Record prototype`
+  '/deepmind': `${deltaThesis.meta.title} — prototype`
 };
 
 function syncPageMeta() {
-  document.title = pageTitles[currentPath()] || 'Delta Record prototype';
+  document.title = pageTitles[currentPath()] || 'The record of change — prototype';
 }
 
 function attachHandlers() {

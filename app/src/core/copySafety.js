@@ -2,7 +2,7 @@ import { assertNoForbiddenMedicalClaims } from './safety.js';
 import { collectThesisText } from '../data/deltaThesis.js';
 
 export const appCopyBlocks = [
-  'The medical record remembers what happened. The Delta Record remembers what was tried, why it was chosen, what changed, how confident we are, and what should happen next.',
+  'You can always find what was done. This adds what was tried, what changed, how confident we are, and what should happen next.',
   'This prototype is not a doctor, diagnostic service, treatment plan or medical device.',
   'It supports evidence-informed health actions, tracking and clinician conversation preparation.',
   'The first slice uses demo cardiometabolic and functional-reserve data only.'

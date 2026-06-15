@@ -164,8 +164,8 @@
   <div class="wrap">
     <div class="eyebrow">The record of change · a strategy brief</div>
     <h1>Health AI gives better answers. We still need to know whether anything changed.</h1>
-    <p class="sub">Google has the models, the research, the consumer surfaces and the data pipes. Turning that capability into better health, and into equity you can actually measure, needs one more layer: a structured record of what was tried and what changed.</p>
-    <p class="human">Frontier capability is mostly here. This is how it becomes health, for the people it usually reaches last.</p>
+    <p class="sub">Google has the models, the research, the apps and the data. What's missing is smaller and duller: a record of what was tried for one person, and what happened after. That is the layer that turns the capability into health, and shows where it never reaches.</p>
+    <p class="human">You can always find what was done. What happened after is a mess.</p>
     <a class="cta" href="app/">See the working prototype →</a>
   </div>
 </header>
@@ -189,17 +189,17 @@
 
     <p class="band-label">The missing layer</p>
     <div class="record">
-      <h3>Change record <small>(Delta Record)</small></h3>
-      <p class="rec-sub">What was tried. What happened. Who benefited. Who did not. Why.</p>
+      <h3>A record of change</h3>
+      <p class="rec-sub">What we tried. Whether it happened. What changed. Who it helped, and who it missed.</p>
       <div class="fields">
-        <div class="field"><div class="n">01</div><div class="t">Baseline</div></div>
-        <div class="field"><div class="n">02</div><div class="t">Attempt</div></div>
-        <div class="field"><div class="n">03</div><div class="t">Follow-through</div></div>
-        <div class="field"><div class="n">04</div><div class="t">Observed change</div></div>
-        <div class="field"><div class="n">05</div><div class="t">Barrier</div></div>
-        <div class="field"><div class="n">06</div><div class="t">Next action</div></div>
+        <div class="field"><div class="n">01</div><div class="t">Before</div></div>
+        <div class="field"><div class="n">02</div><div class="t">What we tried</div></div>
+        <div class="field"><div class="n">03</div><div class="t">Did it happen</div></div>
+        <div class="field"><div class="n">04</div><div class="t">What changed</div></div>
+        <div class="field"><div class="n">05</div><div class="t">What got in the way</div></div>
+        <div class="field"><div class="n">06</div><div class="t">What next</div></div>
       </div>
-      <p class="caveat">Not a replacement for electronic records, trials, PROMs or clinical judgement. It is the linked layer between an attempt and its outcome.</p>
+      <p class="caveat">Not a new medical record, not a trial, not a stand-in for a clinician. Just the bit between the advice and the result, which mostly goes unwritten.</p>
     </div>
 
     <div class="flow-arrow">↓</div>
@@ -266,7 +266,7 @@
 
     <div class="impact">
       <p class="band-label">Impact</p>
-      <p style="margin:0 0 14px;color:#3c4043;max-width:680px;">This is the bottom of the translation: where frontier capability turns into health, and where the equity gaps stop being invisible.</p>
+      <p style="margin:0 0 14px;color:#3c4043;max-width:680px;">The bottom of it: where capability turns into health, and where you can finally see who it misses.</p>
       <div class="pills">
         <span class="pill">Better individual follow-up</span>
         <span class="pill">Better use of Google's health surfaces</span>
@@ -287,72 +287,73 @@
     <div class="block" id="exists">
       <h2 class="section-title">What already exists</h2>
       <div class="prose">
-        <p>Medicine records a great deal of what was done: prescriptions, referrals, tests, scans, diagnoses, procedures, follow-ups. Some outcomes are captured too. Repeat biomarkers, patient-reported measures, registry data. So it is not true that outcomes are never written down. The problem is that they are scattered. They sit in different systems, often in free text, often tied to one pathway, and they are rarely linked back to the specific attempt that was meant to move them. That is not really an accident. The record was built for billing, handover, safety and the courts, not to tell you whether someone got better. So it does not.</p>
-        <p>Google has built much of the hard machinery nearby. Research is run as a model embedded with clinical, product and engineering teams, across imaging and diagnostics, genomics, mobile sensing and public health<sup><a href="#r1">1</a></sup>. MedGemma offers open models for medical text and image comprehension, which Google is explicit should be validated before use in any specific setting<sup><a href="#r2">2</a></sup>. AMIE is a conversational diagnostic system, now tested in a real outpatient clinic with Beth Israel Deaconess Medical Center<sup><a href="#r3">3</a></sup>. There are medical speech models<sup><a href="#r4">4</a></sup>, general reasoning and orchestration in Gemini<sup><a href="#r5">5</a></sup>, and science discovery upstream in AlphaFold<sup><a href="#r6">6</a></sup>. People can hold their own data in Health Connect, whose Medical Records feature carries basic clinical data in FHIR format with the person's permission<sup><a href="#r7">7</a></sup>. Google's consumer health and Fitbit surfaces sit alongside this<sup><a href="#r8">8</a></sup>.</p>
-        <p>That is a lot of capability. What it does not yet add up to is a record of whether an attempt changed anything.</p>
+        <p>You can always find what was done. A statin started, a scan ordered, weight loss advised, a referral sent. What happened after is patchy: a stray repeat test, a follow-up note, a questionnaire score if you are lucky. Scattered, often in free text, often stuck to one pathway, and rarely tied back to the thing it was meant to change.</p>
+        <p>That is not an accident. The record was never built to tell you whether someone got better. It was built for billing, handover, safety and the courts. So it doesn't.</p>
+        <p>Google has built a lot of the hard machinery near this. Research embedded with clinical and product teams, across imaging, genomics, mobile sensing and public health<sup><a href="#r1">1</a></sup>. Open medical models in MedGemma, which Google says to validate before trusting in any one setting<sup><a href="#r2">2</a></sup>. AMIE, a diagnostic chat system now tested in a real clinic with Beth Israel Deaconess<sup><a href="#r3">3</a></sup>. Medical speech<sup><a href="#r4">4</a></sup>, reasoning and orchestration in Gemini<sup><a href="#r5">5</a></sup>, discovery upstream in AlphaFold<sup><a href="#r6">6</a></sup>. And a way for people to hold their own records, in Health Connect, which now carries basic medical data in FHIR with the person's permission<sup><a href="#r7">7</a></sup>. The consumer health and Fitbit surfaces sit alongside<sup><a href="#r8">8</a></sup>.</p>
+        <p>Plenty of capability. None of it, on its own, tells you whether a particular try changed anything.</p>
       </div>
     </div>
 
     <div class="block" id="missing">
       <h2 class="section-title">What is missing</h2>
       <div class="prose">
-        <p>There is no small, consistent unit that says, for one person and one attempt: this is what was true before, this is what we tried, this is whether it actually happened, this is what changed, this is what got in the way, this is what to try next.</p>
-        <p>Call it a change record, or a Delta Record. It is observational to start with. With a single person you cannot see the counterfactual, so you do not claim the attempt caused the result. You record the attempt and what followed. That alone is more than most systems keep.</p>
+        <p>There is no small, steady unit that says, for one person and one try: here is where they started, here is what we tried, did it actually happen, what changed, what got in the way, what next.</p>
+        <p>Call it a record of change. For one person it proves nothing. You never see the version of them who skipped the statin. No counterfactual. Fine. The early claim is small: this is what we tried, and this is what followed. It is still more than we keep now.</p>
       </div>
     </div>
 
     <div class="block" id="adds">
-      <h2 class="section-title">What the change record adds</h2>
+      <h2 class="section-title">What the record adds</h2>
       <div class="prose">
-        <p>It links the attempt to what came after. One person, one attempt, six fields: baseline, attempt, follow-through, observed change, barrier, next action.</p>
-        <p>It is not a new electronic record, a trial, a PROM, or a substitute for clinical judgement. It is the thin layer between an attempt and its outcome, which today mostly goes unwritten.</p>
+        <p>It ties the try to what came after. One person, one attempt, written down properly: where they started, what was tried, whether they could do it, what moved, what blocked it, what to do next.</p>
+        <p>Not a new medical record, not a trial, not a stand-in for a clinician. Just the thin bit between the advice and the result.</p>
       </div>
     </div>
 
     <div class="block" id="adoption">
       <h2 class="section-title">Why it works without full system adoption</h2>
       <div class="prose">
-        <p>It is modular, and that is the point. One person can keep a change record and get something from it before any clinician is involved: a memory of what they tried and what changed, and one safe next step. One clinic can use it without full patient uptake, building the record from ordinary notes, tests, PROMs and, where the person shares it, Health Connect data in FHIR. One pathway can use it on its own.</p>
-        <p>It is worth more as these join up. But it does not need all of them at once, and it does not need a hospital to commit before a patient sees value.</p>
+        <p>It's modular, and that's the point. One person can keep it and get something out of it before any clinician is involved: a memory of what they tried and what changed, and one safe next step. One clinic can run it without full patient uptake, building it from ordinary notes, tests and, where the person shares it, Health Connect data. One pathway can use it alone.</p>
+        <p>It's worth more as these join up. It doesn't need them all at once, and it doesn't need a hospital to commit before a patient sees anything.</p>
       </div>
     </div>
 
     <div class="block" id="equity">
       <h2 class="section-title">Why it matters for equity</h2>
       <div class="prose">
-        <p>Put many change records together and some things become visible that are hard to see now. Where follow-up breaks. Which barriers keep recurring. Who was given advice and never reached the benefit.</p>
-        <p>Two people get the same advice. One can act on it. The other cannot: cost, pain, night shifts, no money, fear. Record only what was said and they look identical. Record what changed and you can see who was left behind, while there is still time to do something about it.</p>
-        <p>This does not fix inequity. It makes visible where benefit fails to arrive, which is the first condition for doing anything about it.</p>
+        <p>Put a lot of these together and things show up that are hard to see now. Where follow-up breaks. Which barriers keep coming back. Who got the advice and never got the benefit.</p>
+        <p>Same advice, different chances. One person can act on it. Another can't: cost, pain, night shifts, no money, fear. Write down only what was said and the two look identical. Write down what changed and you can see who got left behind, while there's still time to do something.</p>
+        <p>It doesn't fix that. It makes it visible, which is the first thing you need before you can act on it.</p>
       </div>
     </div>
 
     <div class="block" id="evidence">
       <h2 class="section-title">How it matures into stronger evidence</h2>
       <div class="prose">
-        <p>Begin observational. Patterns first. Then questions about why people respond differently. Then better outcome definitions. Then, where a setting is mature enough and it is safe, stronger designs: n-of-1, pragmatic trials, point-of-care randomisation.</p>
-        <p>Randomisation is not the foundation. The hard part was never the method, it was following people up, which is what made good evidence slow, costly, and rarest for the people who needed it most. A cheap, structured record of what was tried and what followed is the foundation. It gives a learning health system a small, concrete thing to learn from, and it is what the stronger designs were always waiting on.</p>
+        <p>The causal stuff comes after. Watch first: patterns, then questions about why people respond differently, then better outcome definitions. Then, where a setting is ready and it's safe, the stronger designs: n-of-1, pragmatic trials, randomising at the point of care.</p>
+        <p>Those methods were never the hard part. Following people up was. That's what made good evidence slow, dear, and rarest for the people who needed it most. A cheap record of what was tried and what followed is what they were always waiting on.</p>
       </div>
     </div>
 
     <div class="block" id="notwhat">
       <h2 class="section-title">What it is not</h2>
       <ul class="notlist">
-        <li>Not another diagnostic model.</li>
+        <li>Not another model.</li>
         <li>Not an autonomous doctor.</li>
-        <li>Not a claim of causal proof from one person.</li>
-        <li>Not a replacement for electronic records, trials or PROMs.</li>
-        <li>Not dependent on every hospital adopting it first.</li>
+        <li>Not proof of cause from one person.</li>
+        <li>Not a replacement for medical records, trials or PROMs.</li>
+        <li>Not something that needs every hospital signed up first.</li>
       </ul>
     </div>
 
     <div class="block" id="steps">
       <h2 class="section-title">Theory of change</h2>
       <div class="steps">
-        <div class="step"><span class="num"></span><div><b>Capture the attempted change</b><span>One person, one attempt, recorded as a small structured unit.</span></div></div>
-        <div class="step"><span class="num"></span><div><b>Structure the follow-up</b><span>Turn scattered notes, tests and patient data into a baseline, an action, a response and a barrier.</span></div></div>
-        <div class="step"><span class="num"></span><div><b>Return value to the person and the clinician</b><span>A memory and a next step for the patient; a clean summary for the clinician.</span></div></div>
-        <div class="step"><span class="num"></span><div><b>Aggregate patterns across groups</b><span>See where follow-up breaks and where benefit does not arrive.</span></div></div>
-        <div class="step"><span class="num"></span><div><b>Use mature data for better causal questions</b><span>Where it is safe and earned, move from observed to tested.</span></div></div>
+        <div class="step"><span class="num"></span><div><b>Write down the try</b><span>One person, one attempt, as a small structured unit.</span></div></div>
+        <div class="step"><span class="num"></span><div><b>Structure what follows</b><span>Turn scattered notes, tests and patient data into a before, a try, a result and a blocker.</span></div></div>
+        <div class="step"><span class="num"></span><div><b>Give it back</b><span>A memory and a next step for the person; a short summary for the clinician.</span></div></div>
+        <div class="step"><span class="num"></span><div><b>Add them up</b><span>See where follow-up breaks and where the benefit never lands.</span></div></div>
+        <div class="step"><span class="num"></span><div><b>Then ask the harder questions</b><span>Where it's safe and earned, move from watching to testing.</span></div></div>
       </div>
     </div>
 
@@ -361,7 +362,7 @@
 
 <section class="band band-alt closing">
   <div class="wrap">
-    <blockquote>The scarce thing is no longer only the answer. It is the record of whether the answer became health.</blockquote>
+    <blockquote>Knowing more is not the hard part anymore. Knowing whether it worked is.</blockquote>
   </div>
 </section>
 
